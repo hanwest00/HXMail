@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A8D8A6D-9389-45FC-9E0A-E0CC28825ACB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HXMail</RootNamespace>
+    <AssemblyName>HXMail</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SQLite.Designer">
+      <HintPath>..\HXMail.DAL\bin\Debug\SQLite.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.82.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\HXMail.DAL\bin\Debug\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\HXMail.DAL\bin\Debug\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppMain.Designer.cs">
+      <DependentUpon>AppMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\ClipScreen.cs" />
+    <Compile Include="App_Code\HotKey.cs" />
+    <Compile Include="App_Code\LanguageSelect.cs" />
+    <Compile Include="CreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateUser.Designer.cs">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownLoadMails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownLoadMails.Designer.cs">
+      <DependentUpon>DownLoadMails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppMain.resx">
+      <DependentUpon>AppMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateUser.resx">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownLoadMails.resx">
+      <DependentUpon>DownLoadMails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resource\Lang.en-US.resx" />
+    <EmbeddedResource Include="Resource\Lang.zh-CN.resx" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConvertModel\HMConvert.csproj">
+      <Project>{1994993C-DA79-4119-91B3-72AA27CC870F}</Project>
+      <Name>HMConvert</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMail\HMail.csproj">
+      <Project>{CF99F31C-4EF9-43BC-B531-D3747BF9CD12}</Project>
+      <Name>HMail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HXMail.Common\HXMail.Common.csproj">
+      <Project>{033C1CB1-FE8A-4AAB-AA6D-FB5492826345}</Project>
+      <Name>HXMail.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HXMail.Model\HXMail.Model.csproj">
+      <Project>{D86EA530-422E-447E-AE75-E752F67B3830}</Project>
+      <Name>HXMail.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HXMail.IBLL\HXMail.IBLL.csproj">
+      <Project>{0536ED0B-EFE5-4071-B017-6FCDF88C5C59}</Project>
+      <Name>HXMail.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HXMail.BLL\HXMail.BLL.csproj">
+      <Project>{D4063C1A-04D0-4731-AC4B-6C3E4B1A4D85}</Project>
+      <Name>HXMail.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
